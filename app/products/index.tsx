@@ -8,6 +8,12 @@ export default function ProductList() {
       <Link href="/products/1">Product 1</Link>
       <Link href="/products/2">Product 2</Link>
       <Link href="/products/3">Product 3</Link>
+
+      <Link href="/products/details/product-1">Details Catch All</Link>
+      <Link href="/products/deals/product-1">Deals Catch All</Link>
+      <Link href="/products/best-sellers/product-1">
+        Best Sellers Catch All
+      </Link>
     </View>
   );
 }
