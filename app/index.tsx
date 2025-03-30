@@ -13,7 +13,10 @@ export default function Home() {
       <Text>Home Page</Text>
       <Link href="/about">About</Link>
       <Link href="/profile">Profile</Link>
+      <Link href="/profile/not-found">Profile Not Found</Link>
+
       <Link href="/products">Products</Link>
+      <Link href="/missing-product">Missing Product</Link>
     </View>
   );
 }
