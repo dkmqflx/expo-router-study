@@ -1,38 +1,33 @@
-import { Slot } from "expo-router";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { Stack } from "expo-router";
+import { Image, Pressable, Text } from "react-native";
 
-export default function RootLayout() {
+function LogoTitle() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>This is a header</Text>
-      </View>
-
-      <Slot />
-
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>This is a footer</Text>
-      </View>
-    </SafeAreaView>
+    <Image
+      style={{ width: 30, height: 30 }}
+      source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
+    />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  header: {
-    backgroundColor: "red",
-    padding: 20,
-  },
-  headerText: {
-    color: "white",
-  },
-  footer: {
-    backgroundColor: "blue",
-    padding: 20,
-  },
-  footerText: {
-    color: "white",
-  },
-});
+export default function RootLayout() {
+  return (
+    <Stack
+      screenOptions={{
+        headerStyle: { backgroundColor: "#6a51ae" },
+        headerTintColor: "#fff",
+        headerTitleStyle: { fontWeight: "bold" },
+        headerRight: () => (
+          <Pressable onPress={() => alert("Menu button pressed!")}>
+            <Text style={{ color: "#fff", fontSize: 16 }}>Menu</Text>
+          </Pressable>
+        ),
+        headerTitle: (props) => <LogoTitle />,
+      }}
+    >
+      {/* if LogoTitle is not defined, the title will be the name of the screen */}
+      <Stack.Screen name="index" options={{ title: "Home" }} />
+      <Stack.Screen name="about" options={{ title: "About" }} />
+    </Stack>
+  );
+}
