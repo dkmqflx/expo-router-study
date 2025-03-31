@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
-
 import React from "react";
 
-export default function Register() {
+export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Register</Text>
+      <Text>Welcome!</Text>
     </View>
   );
 }
@@ -13,9 +12,7 @@ export default function Register() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
     justifyContent: "center",
-
     alignItems: "center",
   },
 });

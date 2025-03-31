@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
-
 import React from "react";
 
-export default function ForgotPassword() {
+export default function Explore() {
   return (
     <View style={styles.container}>
-      <Text>Forgot Password</Text>
+      <Text>Find your favorite recipes</Text>
     </View>
   );
 }
@@ -13,9 +12,7 @@ export default function ForgotPassword() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
     justifyContent: "center",
-
     alignItems: "center",
   },
 });
