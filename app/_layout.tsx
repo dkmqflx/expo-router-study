@@ -1,53 +1,24 @@
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Drawer } from "expo-router/drawer";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Stack } from "expo-router";
 
-export default function DrawerLayout() {
+export default function RootLayout() {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <Drawer
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: "#ffffff",
-          },
-          headerTintColor: "#8b5cf6",
-          drawerStyle: {
-            backgroundColor: "#ffffff",
-          },
-          drawerActiveTintColor: "#8b5cf6",
-          drawerInactiveTintColor: "#64748b",
+    <Stack>
+      <Stack.Screen name="index" options={{ title: "Home" }} />
+
+      {/* Use modal for modal screens */}
+      {/* file based modal screens */}
+      <Stack.Screen
+        name="modal"
+        options={{ title: "Modal", presentation: "modal" }}
+      />
+      <Stack.Screen
+        name="webmodal"
+        options={{
+          presentation: "transparentModal",
+          animation: "fade",
+          headerShown: false,
         }}
-      >
-        <Drawer.Screen
-          name="index"
-          options={{
-            title: "Home",
-            drawerLabel: "Home",
-            drawerIcon: ({ color }) => (
-              <FontAwesome name="home" size={24} color={color} />
-            ),
-          }}
-        />
-        <Drawer.Screen
-          name="dashboard"
-          options={{
-            title: "My Dashboard",
-            drawerLabel: "Dashboard",
-            drawerIcon: ({ color }) => (
-              <FontAwesome name="dashboard" size={24} color={color} />
-            ),
-          }}
-        />
-        <Drawer.Screen
-          name="settings"
-          options={{
-            title: "Settings",
-            drawerIcon: ({ color }) => (
-              <FontAwesome name="cog" size={24} color={color} />
-            ),
-          }}
-        />
-      </Drawer>
-    </GestureHandlerRootView>
+      />
+    </Stack>
   );
 }
