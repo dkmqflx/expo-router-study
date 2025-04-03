@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { Link } from "expo-router";
 
 export default function Index() {
@@ -10,8 +10,8 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Link href="/modal">Open Modal</Link>
-      <Link href="/webmodal">Open Web Modal</Link>
+      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Link href="/about">About</Link>
     </View>
   );
 }
